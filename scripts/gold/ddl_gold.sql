@@ -1,3 +1,5 @@
+USE DataWarehouse;
+GO
 /*
 ===============================================================================
 DDL Script: Create Gold Views
@@ -17,8 +19,7 @@ Usage:
 -- =============================================================================
 -- Create Dimension: gold.dim_customers
 -- =============================================================================
-IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL
-    DROP VIEW gold.dim_customers;
+DROP VIEW IF EXISTS gold.dim_customers;
 GO
 
 CREATE VIEW gold.dim_customers AS
@@ -46,8 +47,7 @@ GO
 -- =============================================================================
 -- Create Dimension: gold.dim_products
 -- =============================================================================
-IF OBJECT_ID('gold.dim_products', 'V') IS NOT NULL
-    DROP VIEW gold.dim_products;
+DROP VIEW IF EXISTS gold.dim_products;
 GO
 
 CREATE VIEW gold.dim_products AS
@@ -72,8 +72,7 @@ GO
 -- =============================================================================
 -- Create Fact Table: gold.fact_sales
 -- =============================================================================
-IF OBJECT_ID('gold.fact_sales', 'V') IS NOT NULL
-    DROP VIEW gold.fact_sales;
+DROP VIEW IF EXISTS gold.fact_sales;
 GO
 
 CREATE VIEW gold.fact_sales AS
